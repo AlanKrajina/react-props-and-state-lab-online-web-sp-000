@@ -24,7 +24,7 @@ class Pet extends React.Component {
         </div>
 
 
-
+// if isAdopted true -> shows ONLY Already adopted Button, else ONLY shows Adopt pet button
         <div className="extra content">
           {isAdopted === true ? (
             <button className="ui disabled button">Already adopted</button>
