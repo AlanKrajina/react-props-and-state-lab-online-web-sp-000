@@ -16,7 +16,7 @@ class App extends React.Component {
     }
   }
 
-  onChangeType = (event) => {      
+  onChangeType = (event) => {
     this.setState({
       filters: {
 //        ...this.state.filters,
@@ -38,22 +38,22 @@ class App extends React.Component {
          .then(result => result.json())
          // .then(console.log)
          // (22) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-      
+
          .then(animals => {
             this.setState({
               pets: animals    // updejta pets state prema fetchanim podacima
             })
     })
-  }  
-  
+  }
+
 
     onAdoptPet = (id) => {
     //  console.log("clicked") - radi jer smo poslali iz APP u PetBrowser pa u Pet
     //  console.log(thePet) -  after code below
     //  {id: "5c142d9e-ea45-4231-8146-cccf71c704c0", type: "dog", gender: "male", age: 4, weight: 1, …}
-   
+
     // 1. make a copy or orig array, 2. change pet property, 3. replace array
-   
+
       let petsArrayCopy = [...this.state.pets]
       const thePet = this.state.pets.find(pet => pet.id === id)
       thePet.isAdopted = true
@@ -63,7 +63,7 @@ class App extends React.Component {
 
 
 
-    //  const currentState = pet.isAdopted; 
+    //  const currentState = pet.isAdopted;
     //  console.log(currentState)
     //  false
     //  this.setState({ isAdopted: !currentState }) //, () => console.log(this.state.isAdopted))
@@ -80,8 +80,8 @@ class App extends React.Component {
         <div className="ui container">
           <div className="ui grid">
             <div className="four wide column">
-            <Filters 
-            onChangeType={this.onChangeType} 
+            <Filters
+            onChangeType={this.onChangeType}
             onFindPetsClick={this.onFindPetsClick}
             />
             </div>
